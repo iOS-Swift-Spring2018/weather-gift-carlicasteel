@@ -26,8 +26,10 @@ class ListVC: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ToPageVC" {
+            print("Returning to Page VC")
             let destination = segue.destination as! PageVC
             currentPage = (tableView.indexPathForSelectedRow?.row)!
+            saveLocations()
             destination.currentPage = currentPage
             destination.locationsArray = locationsArray
         }
@@ -36,6 +38,7 @@ class ListVC: UIViewController {
     func saveLocations() {
         let encoder = JSONEncoder()
         if let encoded = try? encoder.encode(locationsArray) {
+            print(encoded)
             UserDefaults.standard.set(encoded, forKey: "locationsArray")
         } else {
             print("ERROR: Saving encoded did not work")
@@ -52,6 +55,7 @@ class ListVC: UIViewController {
             editBarButton.title = "Done"
             addBarButton.isEnabled = false
             saveLocations()
+            print("Location being saved")
         }
     }
     
