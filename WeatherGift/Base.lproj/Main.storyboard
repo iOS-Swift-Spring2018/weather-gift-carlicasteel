@@ -1,27 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="T3p-gx-8vi">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="T3p-gx-8vi">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="Avenir.ttc">
-            <string>Avenir-Book</string>
-        </array>
-        <array key="AvenirNext.ttc">
-            <string>AvenirNext-DemiBold</string>
-            <string>AvenirNext-Regular</string>
-        </array>
-        <array key="AvenirNextCondensed.ttc">
-            <string>AvenirNextCondensed-Bold</string>
-            <string>AvenirNextCondensed-DemiBold</string>
-            <string>AvenirNextCondensed-Regular</string>
-        </array>
-    </customFonts>
     <scenes>
         <!--PageVC-->
         <scene sceneID="Lcw-h5-BSg">
@@ -29,11 +16,12 @@
                 <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="T3p-gx-8vi" customClass="PageVC" customModule="WeatherGift" customModuleProvider="target" sceneMemberID="viewController">
                     <connections>
                         <segue destination="EpH-dc-ujk" kind="presentation" identifier="ToListVC" id="Sy1-Gm-ADk"/>
+                        <segue destination="Db8-Ms-55M" kind="presentation" identifier="ToAboutVC" id="nZn-8f-YGg"/>
                     </connections>
                 </pageViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ISl-lV-HtD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="137" y="-556"/>
+            <point key="canvasLocation" x="137" y="-655"/>
         </scene>
         <!--ListVC-->
         <scene sceneID="UOT-d4-gMz">
@@ -99,6 +87,85 @@
                 <exit id="Ahh-Fo-EtQ" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1217" y="-556"/>
+        </scene>
+        <!--AboutVC-->
+        <scene sceneID="3ou-R7-g73">
+            <objects>
+                <viewController id="Db8-Ms-55M" customClass="AboutVC" customModule="WeatherGift" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bWC-An-g7b">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hty-Lf-Kup">
+                                <rect key="frame" x="16" y="630" width="37" height="30"/>
+                                <state key="normal" title="Done">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="doneButtonPressed:" destination="Db8-Ms-55M" eventType="touchUpInside" id="isB-HN-XlR"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WeatherGift" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T3S-9s-JWl">
+                                <rect key="frame" x="16" y="48" width="343" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="ZQU-eF-iOT"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="32"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gasson" translatesAutoresizingMaskIntoConstraints="NO" id="WCv-lI-IT0">
+                                <rect key="frame" x="16" y="100" width="343" height="316"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Made with love just for you by Carli Casteel" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Py7-k9-eVr">
+                                <rect key="frame" x="16" y="424" width="343" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="qOV-N2-rXI"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="poweredByDarkSky" translatesAutoresizingMaskIntoConstraints="NO" id="tFG-eu-0vI">
+                                <rect key="frame" x="16" y="495" width="122" height="71"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="122" id="NJx-9S-6ec"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="poweredByGoogle" translatesAutoresizingMaskIntoConstraints="NO" id="1jG-ng-IyL">
+                                <rect key="frame" x="146" y="514" width="213" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="32" id="Vkv-uO-my7"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="1jG-ng-IyL" firstAttribute="leading" secondItem="tFG-eu-0vI" secondAttribute="trailing" constant="8" symbolic="YES" id="2Qd-Q7-cYa"/>
+                            <constraint firstItem="tFG-eu-0vI" firstAttribute="centerY" secondItem="1jG-ng-IyL" secondAttribute="centerY" id="5Iu-KN-FL0"/>
+                            <constraint firstItem="tFG-eu-0vI" firstAttribute="top" secondItem="Py7-k9-eVr" secondAttribute="bottom" constant="11" id="6A1-yH-Bnf"/>
+                            <constraint firstItem="Py7-k9-eVr" firstAttribute="trailing" secondItem="1jG-ng-IyL" secondAttribute="trailing" id="CpN-xO-o1F"/>
+                            <constraint firstItem="WCv-lI-IT0" firstAttribute="top" secondItem="T3S-9s-JWl" secondAttribute="bottom" constant="8" symbolic="YES" id="JSI-z2-RJ5"/>
+                            <constraint firstItem="7fQ-3W-aCX" firstAttribute="bottom" secondItem="1jG-ng-IyL" secondAttribute="bottom" constant="121" id="OCn-Dj-nu8"/>
+                            <constraint firstItem="T3S-9s-JWl" firstAttribute="top" secondItem="7fQ-3W-aCX" secondAttribute="top" constant="28" id="OIi-2T-bho"/>
+                            <constraint firstItem="T3S-9s-JWl" firstAttribute="leading" secondItem="WCv-lI-IT0" secondAttribute="leading" id="VDY-B1-RN3"/>
+                            <constraint firstItem="T3S-9s-JWl" firstAttribute="trailing" secondItem="bWC-An-g7b" secondAttribute="trailingMargin" id="VEL-aM-HRv"/>
+                            <constraint firstItem="1jG-ng-IyL" firstAttribute="top" secondItem="Py7-k9-eVr" secondAttribute="bottom" constant="30" id="aBL-DL-miN"/>
+                            <constraint firstItem="T3S-9s-JWl" firstAttribute="leading" secondItem="bWC-An-g7b" secondAttribute="leadingMargin" id="bJY-ft-Lqg"/>
+                            <constraint firstItem="WCv-lI-IT0" firstAttribute="leading" secondItem="Py7-k9-eVr" secondAttribute="leading" id="epT-i4-IS8"/>
+                            <constraint firstItem="WCv-lI-IT0" firstAttribute="trailing" secondItem="Py7-k9-eVr" secondAttribute="trailing" id="eqJ-QQ-QcY"/>
+                            <constraint firstItem="Py7-k9-eVr" firstAttribute="leading" secondItem="tFG-eu-0vI" secondAttribute="leading" id="fVn-Z9-kNc"/>
+                            <constraint firstItem="7fQ-3W-aCX" firstAttribute="bottom" secondItem="Hty-Lf-Kup" secondAttribute="bottom" constant="7" id="fks-Yn-8LX"/>
+                            <constraint firstItem="T3S-9s-JWl" firstAttribute="trailing" secondItem="WCv-lI-IT0" secondAttribute="trailing" id="oLw-uJ-mE2"/>
+                            <constraint firstItem="Py7-k9-eVr" firstAttribute="top" secondItem="WCv-lI-IT0" secondAttribute="bottom" constant="8" symbolic="YES" id="uhn-p1-fY8"/>
+                            <constraint firstItem="tFG-eu-0vI" firstAttribute="leading" secondItem="Hty-Lf-Kup" secondAttribute="leading" id="x7U-z5-HBx"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="7fQ-3W-aCX"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KFk-1e-dnr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-824.79999999999995" y="132.68365817091455"/>
         </scene>
         <!--DetailVC-->
         <scene sceneID="tne-QT-ifu">
@@ -217,7 +284,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="HourlyCell" id="0OO-fr-A9K">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="HourlyCell" id="0OO-fr-A9K" customClass="HourlyWeatherCell" customModule="WeatherGift" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="70" height="70"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -255,6 +322,13 @@
                                                 </label>
                                             </subviews>
                                         </view>
+                                        <connections>
+                                            <outlet property="hourlyIcon" destination="ZRx-pp-u9k" id="HTG-R0-Ggd"/>
+                                            <outlet property="hourlyPrecipProb" destination="d0d-oo-M2W" id="9hV-Bu-9Al"/>
+                                            <outlet property="hourlyTemp" destination="JrH-bU-5WW" id="qel-VC-WBA"/>
+                                            <outlet property="hourlyTime" destination="FDL-Fg-fkn" id="WcL-r6-AYb"/>
+                                            <outlet property="rainDropImage" destination="kqb-n3-fHH" id="Q2d-81-u5s"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
@@ -291,6 +365,9 @@
     </scenes>
     <resources>
         <image name="clear-day" width="103" height="109"/>
+        <image name="gasson" width="3264" height="4928"/>
+        <image name="poweredByDarkSky" width="1904" height="759"/>
+        <image name="poweredByGoogle" width="432" height="54"/>
         <image name="raindrop" width="18" height="20"/>
         <image name="small-cloudy" width="180" height="116"/>
     </resources>
